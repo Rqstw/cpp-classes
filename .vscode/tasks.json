@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build game",
+      "type": "shell",
+      "command": "C:/Users/Adeka/Downloads/w64devkit/bin/g++.exe",
+      "args": [
+        "game.cpp",
+        "-o",
+        "game.exe",
+        "-IC:/raylib/include",
+        "-LC:/raylib/lib",
+        "-lraylib",
+        "-lopengl32",
+        "-lgdi32",
+        "-lwinmm"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Build and Run game",
+      "type": "shell",
+      "command": "C:/Users/Adeka/Downloads/w64devkit/bin/g++.exe game.cpp -o game.exe -IC:/raylib/include -LC:/raylib/lib -lraylib -lopengl32 -lgdi32 -lwinmm && .\\game.exe",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
